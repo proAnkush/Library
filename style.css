@@ -1,0 +1,205 @@
+#headSection{
+    text-align: center;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(234,227,227,1) 40%, rgba(195,195,195,1) 100%, rgba(227,217,217,1) 100%);
+    width: 100%;
+    height: 100%;
+}
+body{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+hr{
+    width: 60%;
+    opacity: 80%;
+    margin-top: 0;
+    margin-bottom: 40px;
+    border: 1px solid white;
+    color: white;
+
+}
+marquee{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+h1{
+    font-size: 6vmin;
+    margin-bottom: 0;
+    top: 0;
+    font-family: "Oleo Script";
+    letter-spacing: 1px;
+}
+#book_cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.card{
+    background: #314755;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26a0da, #82b1ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: 3%;
+    flex: 0 1 28%;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    padding-left: 3%;
+    padding-right: 1%;
+    text-align: left;
+    float: left;
+}
+.marq{
+    font-size: 20px;
+}
+.card hr{
+    margin-bottom: 0px;
+}
+.card:hover{
+    box-shadow: 0px 0px 10px black;
+    color: white;
+}
+.card h2{
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 3vmin;
+    font-weight: bold;
+    font-family: "Tenor Sans", Helvetica, serif;
+    text-align: left;
+}
+.card:hover .remove{
+    background-color: rebeccapurple;
+    color: white;
+    cursor: pointer;
+    border-right: 10px solid white;
+    transform: translateY(-3px);
+}
+.card:hover h2{
+    color: white;
+}
+.remove{
+    padding: 15px;
+    font-size: 2vmin;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1%;
+    width: 50%;
+    margin-left: 18%;
+    margin-right: 25%;
+}
+.remove:active{
+    transform: translateY(5px);
+}
+.card .remove:active{
+    animation-name: trash;
+    animation-duration: 500ms;
+}
+#add_button{
+    font-size: 60px;
+    font-weight: 900;
+    background-color: #86A8E7;
+    color: white;
+    width: 75px;
+    position: fixed;
+    right: 0;
+    margin-right: 100px;
+    bottom: 0;
+    margin-bottom: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, .4);
+}
+#add_button:hover{
+    color: #86A8E7;
+    background-color: white;
+    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, .4);
+}
+#form{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    visibility: hidden;
+    position: fixed;
+    align-items: center;
+    justify-self: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#form-card{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 30px;
+    color: black;
+    width: 35%;
+}
+#form-card h2{
+
+    margin-top: 0;
+    font-size: 38px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, serif;
+}
+.in{
+    margin-bottom: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border-right: 10px solid red;
+    font-size: 24px;
+    padding: 20px;
+    font-family: Arial, Helvetica, serif;
+}
+.in:hover{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+.inRead:hover{
+    box-shadow: 0px 0px 0px;
+}
+#inRead{
+    transform: scale(2) translateX(5px) translateY(3px);
+    margin-bottom: 0;
+    bottom: 0;
+}
+#form-buttons{
+    display: flex;
+    flex-direction: row;
+}
+#cancel, #submit{
+    font-size: 24px;
+    font-weight: 900;
+    padding: 10px 0;
+}
+#cancel{
+    flex-grow: 4;
+    background-color: white;
+    color: #86a8e7;
+    border: 5px solid #86A8E7;
+}
+#submit{
+    flex-grow: 9;
+    background-color: #86A8E7;
+    color: white;
+    border: 0px;
+}
+
