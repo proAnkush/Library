@@ -11,46 +11,18 @@
         <section id="headSection">
             <h1><span contenteditable>Ankush</span>'s library</h1>
         </section>
-
         <div id="book_cards">
-            <div class="card">
-                <h2 class="title">Book Name </h2>
-                
-                <hr>
-                <p>Author</p>
-                <p>123 pages</p>
-                <p>Reading Complete</p>
-                <button class="remove" onclick="removeCard(this);" name="help">Remove Book</button>
-            </div>
-            <div class="card">
-                <h2 class="title">Book Name</h2>
-                <hr>
-                <p>Author</p>
-                <p>123 pages</p>
-                <p>Reading Complete</p>
-                <button class="remove">Remove Book</button>
-            </div>
-            <div class="card">
-                <h2 class="title">Book Name</h2>
-                <hr>
-                <p>Author</p>
-                <p>123 pages</p>
-                <p>Reading Complete</p>
-                <button class="remove">Remove Book</button>
-            </div>
-
+            <!-- This is where book cards are stored -->
         </div>
         <div>
-            <button id="add_button">
-                +
-            </button>
+            <button id="add_button">+</button>
         </div>
         <div id="form">
             <div id="form-card">
                 <h2>Adding a book</h2>
-                <input type="text" id="inTitle" class="in" placeholder="Enter book title," required>
-                <input type="text" id="inAuth" class="in" minlength="1" maxlength="30" placeholder="And author name" required>
-                <input type="number" id="inPages" class="in" min="0" max="9999" placeholder="And number of pages" required onKeyDown="if(this.value.length==5 && event.keyCode>47 && event.keyCode < 58)return false;">
+                <input type="text" id="inTitle" class="in" placeholder="Enter book title,">
+                <input type="text" id="inAuth" class="in" minlength="1" maxlength="30" placeholder="And author's name,">
+                <input type="number" id="inPages" class="in" min="0" max="9999" placeholder="And number of pages" onKeyDown="if(this.value.length==5 && event.keyCode>47 && event.keyCode < 58)return false;">
                 <label for="inRead" class="in inRead">Did you read the book: 
                     <input type="checkbox" class="inRead" id="inRead" name="inRead" class="in">
                 </label>
@@ -60,9 +32,6 @@
                 </span>
             </div>
         </div>
-        <script>
-        </script>
-
         <script src="script.js"></script>
     </body>
 </html>

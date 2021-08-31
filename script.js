@@ -8,11 +8,9 @@ class Book{
     }
 }
 
-
-let mB = new Book("One2manysdafsdafasdfasdfdasfasdfsda", "J. K. Rollering", 213, false);
-myLibrary.push(mB);
-myLibrary.push(new Book("two", "def", 321, true));
-myLibrary.push(new Book("three", "abs", 321, true))
+myLibrary.push(new Book("Racing In Rain", "Tom Baker", 248, true));
+myLibrary.push(new Book("Why Pandas Are Cute", "Quinn Harris", 321, true));
+myLibrary.push(new Book("You Can", "Nathan Dontes", 367, false))
 
 updateGridFromLibrary();
 
@@ -52,6 +50,8 @@ function updateGrid(mb){
     }else{
         myP3.textContent = "You haven't read this";
     }
+    // This doesn't exist
+    // or does it
     myDiv.appendChild(myTitle); 
     myDiv.appendChild(myHR);
     myDiv.appendChild(myP1);
