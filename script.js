@@ -9,8 +9,8 @@ class Book{
 }
 
 myLibrary.push(new Book("Racing In Rain", "Tom Baker", 248, true));
-myLibrary.push(new Book("Why Pandas Are Cute", "Quinn Harris", 321, true));
-myLibrary.push(new Book("You Can", "Nathan Dontes", 367, false))
+myLibrary.push(new Book("Why Pandas Are Cute", "Quinn Harris", 321, false));
+myLibrary.push(new Book("You Can", "Nathan Dontes", 367, true))
 
 updateGridFromLibrary();
 
@@ -20,6 +20,7 @@ function updateGrid(mb){
 
     let myDiv = document.createElement("div");
     myDiv.classList.add("card");
+
  //   myDiv.setAttribute('id', mb.title);
     let myTitle = document.createElement("h2");
     myTitle.textContent = mb.title;
@@ -35,6 +36,20 @@ function updateGrid(mb){
     let myP2 = document.createElement("p");
     myP2.textContent = mb.npages + " pages";
     let myP3 = document.createElement("p");
+
+    let myReadButton = document.createElement("button");
+    myReadButton.setAttribute("data", ""+ myLibrary.indexOf(mb));
+    // data will be true if book is read else false;
+    myReadButton.onclick = myReadFunction;
+    myReadButton.classList.add("readBtn");
+    if(mb.isRead == true){
+        myReadButton.textContent = "Marks as Unread";
+        myDiv.classList.add("readed");
+    }else{
+        myReadButton.textContent = "Mark as Read";
+        myDiv.classList.add("nonReaded")
+    }
+
 
     let myDelBtn = document.createElement("button");
     myDelBtn.textContent = "Remove Book";
@@ -57,8 +72,14 @@ function updateGrid(mb){
     myDiv.appendChild(myP1);
     myDiv.appendChild(myP2);
     myDiv.appendChild(myP3);
+    myDiv.appendChild(myReadButton);
     myDiv.appendChild(myDelBtn);
     document.getElementById("book_cards").appendChild(myDiv);
+}
+function myReadFunction(e){
+    console.log(myLibrary[e.path[0].getAttribute("data")].isRead);
+    myLibrary[e.path[0].getAttribute("data")].isRead = !myLibrary[e.path[0].getAttribute("data")].isRead;
+    updateGridFromLibrary();
 }
 
 document.getElementById("add_button").onclick = addBookToLibrary;
@@ -74,6 +95,8 @@ function showForm(){
         var bookAuth = document.getElementById("inAuth").value;
         var bookPage = document.getElementById("inPages").value;
         var bookRead = document.getElementById("inRead").checked;
+        console.log(bookRead);
+        console.log(typeof bookRead);
         if(bookName == "" || bookName==" ") bookName = "Title"
         if(bookAuth == "" || bookName==" ") bookAuth = "Unknown"
         if(bookPage == "" || bookPage < 0) bookPage = "0";

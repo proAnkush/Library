@@ -18,25 +18,33 @@ body{
     margin-right: 15%;
 }
 hr{
-    width: 60%;
-    opacity: 80%;
-    margin-top: 0;
-    margin-bottom: 40px;
-    border: 1px solid white;
-    color: white;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0), rgba(255, 255, 255, 0));
 
+}
+.card:hover hr{
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 255, 255), rgba(0, 0, 0, 0));
 }
 marquee{
     margin: 0;
     padding: 0;
     border: 0;
 }
+.cutout{
+    background: #314755;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26a0da, #82b1ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
 h1{
     font-size: 6vmin;
     margin-bottom: 0;
     top: 0;
-    font-family: "Oleo Script";
-    letter-spacing: 1px;
+    font-family: "Kaisei HarunoUmi", "Garamond";
+    border: none;
 }
 #book_cards{
     display: flex;
@@ -46,11 +54,28 @@ h1{
     padding: 5px;
     align-items: flex-start;
     align-content: flex-start;
+    border-right: 2px solid black;
 }
-.card{
+.card.readed{
     background: #314755;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #26a0da, #82b1ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: 3%;
+    flex: 0 1 28%;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    padding-left: 3%;
+    padding-right: 1%;
+    text-align: left;
+    float: left;
+}
+
+.card.nonReaded{
+    background: #009FFF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ec2F4B88, #009FFF88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ec2F4B88, #009FFF88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     margin-top: 3%;
     flex: 0 1 28%;
     font-size: 18px;
@@ -70,6 +95,7 @@ h1{
 .card:hover{
     box-shadow: 0px 0px 10px black;
     color: white;
+    text-shadow: white 100px;
 }
 .card h2{
     padding-top: 10px;
@@ -81,6 +107,9 @@ h1{
     font-family: "Tenor Sans", Helvetica, serif;
     text-align: left;
 }
+.card:hover h2{
+    color: white;
+}
 .card:hover .remove{
     background-color: rebeccapurple;
     color: white;
@@ -88,13 +117,11 @@ h1{
     border-right: 10px solid white;
     transform: translateY(-3px);
 }
-.card:hover h2{
-    color: white;
-}
 .remove{
     padding: 15px;
     font-size: 2vmin;
     border: none;
+    border-right: 10px solid rebeccapurple;
     border-radius: 10px;
     background-color: white;
     margin-bottom: 1%;
@@ -108,6 +135,29 @@ h1{
 .card .remove:active{
     animation-name: trash;
     animation-duration: 500ms;
+}
+.readBtn{
+    padding: 15px;
+    font-size: 1.8vmin;
+    border: none;
+    color: white;
+    border-right: 10px solid white;
+    border-radius: 10px;
+    background-color: rebeccapurple;
+    margin-bottom: 1%;
+    width: 50%;
+    margin-left: 18%;
+    margin-right: 25%;
+    margin-bottom: 3%;
+}
+.card:hover .readBtn{
+    background-color: white;
+    color: black;
+    border-right: 10px solid rebeccapurple ;
+}
+.readBtn:active{
+    transform: translateY(5px);
+    text-decoration: underline;
 }
 #add_button{
     font-size: 60px;
@@ -123,12 +173,29 @@ h1{
     border-radius: 50%;
     cursor: pointer;
     border: none;
-    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, .4);
 }
 #add_button:hover{
     color: #86A8E7;
     background-color: white;
-    box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, .4);
+    animation-name: addRotate;
+    animation-duration: 200ms;
+}
+@keyframes addRotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(900deg);
+    }
+    50%{
+        transform: rotate(1800deg);
+    }
+    75%{
+        transform: rotate(900deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 #form{
     width: 100%;
