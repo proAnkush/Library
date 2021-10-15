@@ -33,12 +33,7 @@ marquee{
     padding: 0;
     border: 0;
 }
-.cutout{
-    background: #314755;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #26a0da, #82b1ce); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-}
+
 h1{
     font-size: 6vmin;
     margin-bottom: 0;
@@ -177,26 +172,11 @@ h1{
 #add_button:hover{
     color: #86A8E7;
     background-color: white;
-    animation-name: addRotate;
-    animation-duration: 200ms;
+    transform: rotate(180deg) scale(1.1);
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
 }
-@keyframes addRotate{
-    0%{
-        transform: rotate(0deg);
-    }
-    25%{
-        transform: rotate(900deg);
-    }
-    50%{
-        transform: rotate(1800deg);
-    }
-    75%{
-        transform: rotate(900deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
-}
+
 #form{
     width: 100%;
     height: 100%;
