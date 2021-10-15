@@ -77,7 +77,6 @@ function updateGrid(mb){
     document.getElementById("book_cards").appendChild(myDiv);
 }
 function myReadFunction(e){
-    console.log(myLibrary[e.path[0].getAttribute("data")].isRead);
     myLibrary[e.path[0].getAttribute("data")].isRead = !myLibrary[e.path[0].getAttribute("data")].isRead;
     updateGridFromLibrary();
 }
@@ -95,8 +94,6 @@ function showForm(){
         var bookAuth = document.getElementById("inAuth").value;
         var bookPage = document.getElementById("inPages").value;
         var bookRead = document.getElementById("inRead").checked;
-        console.log(bookRead);
-        console.log(typeof bookRead);
         if(bookName == "" || bookName==" ") bookName = "Title"
         if(bookAuth == "" || bookName==" ") bookAuth = "Unknown"
         if(bookPage == "" || bookPage < 0) bookPage = "0";
